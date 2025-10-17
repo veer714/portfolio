@@ -2,35 +2,123 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    
-    <title>veer profitfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Creative Director</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Veer Profitfolio</h1> 
-   <h2>i am a web developer</h2>
-   <hr/>
-   <h3><a href="../3.4 Birthday Invite Project/index.html">birthday project</a></h3>
-   <img src="./assets/birthdayproject.png"/>
-   <h3><a href="../2.4 Movie Ranking Project/index.html">movie ranking project</a></h3>
-   <img src="./assets/Screenshot 2025-02-11 222856.png"/>
-   <hr/><ul>
-   <li><a href="./public/about.html">about me </a></li> 
-   <li><a href="./public/contact.html">contact me</a></li>
-   </ul>
-    
+    <div class="grain-overlay"></div>
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <!-- Home Page -->
+    <div id="home" class="page active">
+        <nav class="nav">
+            <a onclick="navigateToAbout()">About</a>
+        </nav>
+
+        <section class="hero">
+            <div class="gradient-bg"></div>
+            <div class="gradient-accent"></div>
+            <div class="gradient-accent-2"></div>
+            <div class="mountain-shape"></div>
+            
+            <div class="content">
+                <h1 >Veer Pratap Singh</h1>
+                <p class="subtitle">AI & Data Science Student</p>
+            </div>
+
+            <div class="scroll-indicator" onclick="document.querySelector('.contact-section').scrollIntoView({behavior: 'smooth'})"></div>
+
+            <div class="footer-text">
+                Currently pursuing B.Tech in Artificial Intelligence & Data Science at Arya College of Engineering and Technology, Kukas, Jaipur. Passionate about programming and building innovative solutions.
+            </div>
+        </section>
+
+        <section class="contact-section">
+            <span class="section-number">01</span>
+            <div class="contact-links">
+                <a href="mailto:raghavveer714@email.com">Email</a>
+                <a href="https://www.linkedin.com/in/veer-pratap-singh-raghav-a4846b329?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank">LinkedIn</a>
+                <a href="https://github.com/veer714" target="_blank">GitHub</a>
+            </div>
+        </section>
+    </div>
+
+    <!-- About Page -->
+    <div id="about" class="page about-page">
+        <a class="back-button" onclick="navigateToHome()">Home</a>
+
+        <section class="about-hero">
+            <h1>About</h1>
+        </section>
+
+        <div class="about-content">
+            <div class="profile-section">
+                <img src="./portfolio-img.jpg" alt="Profile" class="profile-image">
+                <h2>Veer Pratap Singh</h2>
+                <p class="role">AI & Data Science Student</p>
+            </div>
+
+            <div class="bio-section">
+                <div class="section-title">Background</div>
+                <p>
+                    I am B.Tech student specializing in Artificial Intelligence & Data Science at Arya College of Engineering and Technology, Kukas, Jaipur. Dedicated to exploring the intersection of technology and innovation through programming and problem-solving.
+                </p>
+                <p>
+                    Proficient in multiple programming languages including Python, C, C++, and web technologies like HTML, CSS, and JavaScript. Constantly learning and building projects to apply theoretical knowledge to real-world challenges.
+                </p>
+                <p>
+                    Enthusiastic about machine learning, data analysis, and creating impactful software solutions that can make a difference in people's lives.
+                </p>
+            </div>
+
+            <div class="career-section">
+                <div class="section-title">Education</div>
+                <div class="career-grid">
+                    <div class="career-item">
+                        <h3>B.Tech in AI & Data Science</h3>
+                        <p class="company">Arya College of Engineering and Technology</p>
+                        <p class="period">Kukas, Jaipur</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="career-section">
+                <div class="section-title">Technical Skills</div>
+                <div class="clients-grid">
+                    <div class="client-item">Python</div>
+                    <div class="client-item">C</div>
+                    <div class="client-item">C++</div>
+                    <div class="client-item">HTML</div>
+                    <div class="client-item">CSS</div>
+                    <div class="client-item">JavaScript</div>
+                </div>
+            </div>
+
+            <div class="clients-section">
+                <div class="section-title">Areas of Interest</div>
+                <div class="clients-grid">
+                    <div class="client-item">Artificial Intelligence</div>
+                    <div class="client-item">Machine Learning</div>
+                    <div class="client-item">Data Science</div>
+                    <div class="client-item">Web Development</div>
+                    
+                    <div class="client-item">Problem Solving</div>
+                    <div class="client-item">Data Analysis</div>
+                    <div class="client-item">Software Development</div>
+                </div>
+            </div>
+        </div>
+
+        <section class="contact-section">
+            <div class="contact-links">
+                <a href="mailto:raghavveer714@email.com">Email</a>
+                <a href="https://www.linkedin.com/in/veer-pratap-singh-raghav-a4846b329?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank">LinkedIn</a>
+                <a href="https://github.com/veer714" target="_blank">GitHub</a>
+            </div>
+        </section>
+    </div>
+  <script src="script.js"></script>
 </body>
-
-
-<!-- TODO 2: Add Your previous projects' HTML into the public folder -->
-
-<!-- TODO 3: Take screenshots of your project previews and add the images to the images folder -->
-
-<!-- TODO 4: Add titles/subtitles etc. -->
-
-<!-- TODO 5: Add a link to the project pages -->
-
-<!-- TODO 6: Add images to show the project previews
-HINT for TODO 6: You can use the height attribute set to 200 to make the image smaller:
-https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#attr-height -->
-
-<!-- TODO 7: Add the Contact Me and About Me page links --></html>
+</html>
