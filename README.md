@@ -8,17 +8,16 @@ Welcome to my developer portfolio! I’m passionate about building impactful sof
 
 - 🧑‍💻 Software Developer interested in full-stack web development, open source, and automation.
 - 💡 Always learning and experimenting with new frameworks and tools.
-- 🌏 Based in [Your Location] (optional).
-- 📚 Currently exploring: [React, Node.js, AWS, etc.]
+
+
 
 ---
 
 ## 🛠️ Tech Stack
 
-- **Languages:** JavaScript, TypeScript, Python, [add yours]
-- **Frameworks:** React, Next.js, Node.js, Express, [add yours]
-- **Tools:** Git, Docker, VS Code, [add yours]
-- **Other:** REST APIs, SQL/NoSQL, CI/CD, [add yours]
+- **Languages:** JavaScript, TypeScript, Python
+- **Frameworks:** React, Next.js, Node.js, Express
+- **Other:** REST APIs, SQL/NoSQL, CI/CD
 
 ---
 
@@ -47,8 +46,9 @@ _A brief description of the project, technologies used, and any notable achievem
 ## 📫 Contact
 
 - **GitHub:** [veer714](https://github.com/veer714)
-- **LinkedIn:** [Add your LinkedIn URL]
-- **Email:** [Add your email]
+- **LinkedIn:** https://www.linkedin.com/in/veer-pratap-singh-raghav-a4846b329?utm_source=share_via&utm_content=profile&utm_medium=member_android
+- **Email:** raghavveer714@gmail.com
+- 
 
 ---
 
