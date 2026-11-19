@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    border-color: #292F2D;
+    box-sizing: border-box;
+  }
+
+  body {
+    background-color: #0C0F0E;
+    color: #E7ECE9;
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+/* Custom minimal scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0C0F0E;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #292F2D;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #38423F;
+}
+
+/* Fine Thought inspired comment grid styling */
+.editor-comment-grid {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(41, 47, 45, 0.25) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(41, 47, 45, 0.25) 1px, transparent 1px);
+}
+
+.ascii-grid-line {
+  font-family: 'JetBrains Mono', monospace;
+  color: #38423F;
+  letter-spacing: -0.05em;
+  user-select: none;
+}
+
+/* Code block highlight */
+.code-token-keyword { color: #F472B6; }
+.code-token-function { color: #60A5FA; }
+.code-token-string { color: #34D399; }
+.code-token-comment { color: #6B7280; font-style: italic; }
+.code-token-number { color: #FBBF24; }
+.code-token-variable { color: #E7ECE9; }
+
+/* Subtle pulse dot */
+.pulse-dot {
+  position: relative;
+}
+.pulse-dot::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: inherit;
+  animation: ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+@keyframes ping {
+  75%, 100% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+}
+
