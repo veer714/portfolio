@@ -1,12 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { 
   Files, 
   Search, 
   GitBranch, 
   Brain, 
-  Settings, 
   X,
-  ExternalLink,
   HelpCircle,
   Terminal
 } from 'lucide-react';
@@ -20,13 +18,26 @@ export function Sidebar({
   onTogglePalette,
   onToggleTerminal 
 }) {
+  // Prevent background scrolling when mobile drawer is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isOpen]);
+
   return (
     <>
       {/* Mobile Backdrop */}
       {isOpen && (
         <div 
           onClick={onClose}
-          className="md:hidden fixed inset-0 bg-black/60 z-40 backdrop-blur-xs"
+          className="md:hidden fixed inset-0 bg-black/70 z-40 backdrop-blur-xs transition-opacity duration-200"
+          aria-hidden="true"
         />
       )}
 
@@ -39,10 +50,13 @@ export function Sidebar({
         {/* Left Activity Bar (VS Code style) */}
         <div className="w-12 bg-[#0C0F0E] border-r border-[#292F2D] flex flex-col items-center justify-between py-3 select-none flex-shrink-0 z-20">
           {/* Top Activity Icons */}
-          <div className="flex flex-col items-center gap-4 w-full">
+          <div className="flex flex-col items-center gap-3.5 w-full">
             {/* Explorer active */}
             <button
-              onClick={() => onOpenFile('about.md')}
+              onClick={() => {
+                onOpenFile('about.md');
+                if (window.innerWidth < 768) onClose();
+              }}
               className="w-10 h-10 flex items-center justify-center relative text-[#E7ECE9] hover:text-[#3DD68C] transition-colors"
               title="Explorer (Files)"
             >
@@ -52,7 +66,10 @@ export function Sidebar({
 
             {/* Command search */}
             <button
-              onClick={onTogglePalette}
+              onClick={() => {
+                onTogglePalette();
+                if (window.innerWidth < 768) onClose();
+              }}
               className="w-10 h-10 flex items-center justify-center text-[#929D97] hover:text-[#E7ECE9] transition-colors"
               title="Command Palette (Ctrl+K)"
             >
@@ -61,7 +78,10 @@ export function Sidebar({
 
             {/* Neural Lab shortcut */}
             <button
-              onClick={() => onOpenFile('neural-playground.tsx')}
+              onClick={() => {
+                onOpenFile('neural-playground.tsx');
+                if (window.innerWidth < 768) onClose();
+              }}
               className="w-10 h-10 flex items-center justify-center text-[#929D97] hover:text-[#3DD68C] transition-colors"
               title="AI & Neural Playground"
             >
@@ -70,7 +90,10 @@ export function Sidebar({
 
             {/* Git Source Control */}
             <button
-              onClick={() => onOpenFile('projects')}
+              onClick={() => {
+                onOpenFile('projects');
+                if (window.innerWidth < 768) onClose();
+              }}
               className="w-10 h-10 flex items-center justify-center relative text-[#929D97] hover:text-[#E7ECE9] transition-colors"
               title="Projects Repository (Git)"
             >
@@ -83,7 +106,10 @@ export function Sidebar({
           <div className="flex flex-col items-center gap-3 w-full">
             {/* Terminal launcher */}
             <button
-              onClick={onToggleTerminal}
+              onClick={() => {
+                onToggleTerminal();
+                if (window.innerWidth < 768) onClose();
+              }}
               className="w-10 h-10 flex items-center justify-center text-[#929D97] hover:text-[#3DD68C] transition-colors"
               title="Toggle Interactive Terminal"
             >
@@ -92,7 +118,10 @@ export function Sidebar({
 
             {/* Contact quick button */}
             <button
-              onClick={() => onOpenFile('contact.md')}
+              onClick={() => {
+                onOpenFile('contact.md');
+                if (window.innerWidth < 768) onClose();
+              }}
               className="w-10 h-10 flex items-center justify-center text-[#929D97] hover:text-[#E7ECE9] transition-colors"
               title="Contact Configuration"
             >
@@ -102,11 +131,12 @@ export function Sidebar({
         </div>
 
         {/* File Explorer Content Pane */}
-        <div className="w-64 md:w-60 lg:w-64 h-full relative">
+        <div className="w-[calc(80vw-48px)] max-w-[240px] md:w-60 lg:w-64 h-full relative">
           {/* Mobile close button inside header */}
           <button
             onClick={onClose}
-            className="md:hidden absolute top-2 right-2 z-10 p-1 text-[#929D97] hover:text-[#E7ECE9]"
+            className="md:hidden absolute top-2 right-2 z-10 p-1.5 text-[#929D97] hover:text-[#E7ECE9] hover:bg-[#181D1B] rounded"
+            title="Close navigation"
           >
             <X size={16} />
           </button>
@@ -115,7 +145,6 @@ export function Sidebar({
             activeFile={activeFile} 
             onOpenFile={(file) => {
               onOpenFile(file);
-              // On mobile, close sidebar on selection
               if (window.innerWidth < 768) {
                 onClose();
               }
@@ -126,4 +155,3 @@ export function Sidebar({
     </>
   );
 }
-

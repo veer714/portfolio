@@ -8,9 +8,7 @@ import {
   Copy, 
   Check, 
   ExternalLink,
-  MessageSquare,
-  Sparkles,
-  Terminal
+  MessageSquare
 } from 'lucide-react';
 import { profileData } from '../data/profile';
 
@@ -61,12 +59,12 @@ ${formData.message || '[Your message here]'}`;
   };
 
   return (
-    <div className="max-w-4xl mx-auto py-8 px-4 sm:px-8 space-y-8 font-sans">
+    <div className="max-w-4xl mx-auto py-6 sm:py-8 px-3.5 sm:px-8 space-y-6 sm:space-y-8 font-sans">
       {/* Scope Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 font-mono text-[11px] text-[#5E6964] border-b border-[#292F2D] pb-3">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-3 font-mono text-[11px] text-[#5E6964] border-b border-[#292F2D] pb-3">
         <div className="flex items-center gap-2">
           <span className="text-[#3DD68C]">// start .scope-contact</span>
-          <span>PATH: config/contact.md</span>
+          <span className="hidden sm:inline">PATH: config/contact.md</span>
         </div>
         <div className="flex items-center gap-2 text-[#3DD68C]">
           <span className="w-1.5 h-1.5 rounded-full bg-[#3DD68C]" />
@@ -79,7 +77,7 @@ ${formData.message || '[Your message here]'}`;
         <h2 className="text-2xl sm:text-4xl font-extrabold text-[#E7ECE9] tracking-tight">
           Initialize Contact &amp; Collaboration
         </h2>
-        <p className="text-sm text-[#929D97] max-w-2xl leading-relaxed">
+        <p className="text-xs sm:text-sm text-[#929D97] max-w-2xl leading-relaxed">
           Have an interesting project, internship opportunity, machine learning discussion, or open-source collaboration in mind? Feel free to reach out directly through any of the channels below.
         </p>
       </div>
@@ -97,7 +95,7 @@ ${formData.message || '[Your message here]'}`;
           </div>
           <button
             onClick={handleCopyEmail}
-            className="flex items-center gap-1.5 text-[#3DD68C] hover:text-[#4ADE80] text-[11px] pt-1"
+            className="flex items-center gap-1.5 text-[#3DD68C] hover:text-[#4ADE80] text-[11px] pt-1 min-h-[32px]"
           >
             {copiedEmail ? <Check size={12} /> : <Copy size={12} />}
             <span>{copiedEmail ? 'Copied to Clipboard!' : 'Copy Email'}</span>
@@ -117,7 +115,7 @@ ${formData.message || '[Your message here]'}`;
             href={profileData.contact.github}
             target="_blank"
             rel="noreferrer"
-            className="flex items-center gap-1 text-[#60A5FA] hover:underline text-[11px] pt-1"
+            className="flex items-center gap-1 text-[#60A5FA] hover:underline text-[11px] pt-1 min-h-[32px]"
           >
             <span>View Repositories</span>
             <ExternalLink size={11} />
@@ -137,7 +135,7 @@ ${formData.message || '[Your message here]'}`;
             href={profileData.contact.linkedin}
             target="_blank"
             rel="noreferrer"
-            className="flex items-center gap-1 text-[#38BDF8] hover:underline text-[11px] pt-1"
+            className="flex items-center gap-1 text-[#38BDF8] hover:underline text-[11px] pt-1 min-h-[32px]"
           >
             <span>Connect on LinkedIn</span>
             <ExternalLink size={11} />
@@ -146,19 +144,19 @@ ${formData.message || '[Your message here]'}`;
       </div>
 
       {/* Functional Message Composer Card */}
-      <div className="p-6 rounded-lg bg-[#141918] border border-[#292F2D] space-y-5">
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-[#292F2D] pb-3">
+      <div className="p-4 sm:p-6 rounded-lg bg-[#141918] border border-[#292F2D] space-y-4 sm:space-y-5">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 border-b border-[#292F2D] pb-3">
           <div className="flex items-center gap-2 font-mono text-xs">
             <MessageSquare size={15} className="text-[#3DD68C]" />
             <span className="font-bold text-[#E7ECE9]">Send a Message</span>
           </div>
           <span className="text-[10px] font-mono text-[#5E6964]">
-            Dispatches directly via your system mail client or clipboard
+            Dispatches via your default system mail client
           </span>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-4 font-mono text-xs">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4">
             {/* Name */}
             <div className="space-y-1.5">
               <label className="text-[#929D97] block text-[11px]">Your Name *</label>
@@ -168,7 +166,7 @@ ${formData.message || '[Your message here]'}`;
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                 placeholder="e.g. Alex Turing"
-                className="w-full bg-[#0C0F0E] border border-[#292F2D] rounded p-2.5 text-[#E7ECE9] placeholder-[#5E6964] focus:outline-none focus:border-[#3DD68C]"
+                className="w-full bg-[#0C0F0E] border border-[#292F2D] rounded p-2.5 text-sm sm:text-xs text-[#E7ECE9] placeholder-[#5E6964] focus:outline-none focus:border-[#3DD68C] min-h-[42px]"
               />
             </div>
 
@@ -181,7 +179,7 @@ ${formData.message || '[Your message here]'}`;
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                 placeholder="e.g. alex@organization.com"
-                className="w-full bg-[#0C0F0E] border border-[#292F2D] rounded p-2.5 text-[#E7ECE9] placeholder-[#5E6964] focus:outline-none focus:border-[#3DD68C]"
+                className="w-full bg-[#0C0F0E] border border-[#292F2D] rounded p-2.5 text-sm sm:text-xs text-[#E7ECE9] placeholder-[#5E6964] focus:outline-none focus:border-[#3DD68C] min-h-[42px]"
               />
             </div>
           </div>
@@ -194,7 +192,7 @@ ${formData.message || '[Your message here]'}`;
               value={formData.subject}
               onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
               placeholder="e.g. AI Internship / Collaboration Inquiry"
-              className="w-full bg-[#0C0F0E] border border-[#292F2D] rounded p-2.5 text-[#E7ECE9] placeholder-[#5E6964] focus:outline-none focus:border-[#3DD68C]"
+              className="w-full bg-[#0C0F0E] border border-[#292F2D] rounded p-2.5 text-sm sm:text-xs text-[#E7ECE9] placeholder-[#5E6964] focus:outline-none focus:border-[#3DD68C] min-h-[42px]"
             />
           </div>
 
@@ -207,16 +205,16 @@ ${formData.message || '[Your message here]'}`;
               value={formData.message}
               onChange={(e) => setFormData({ ...formData, message: e.target.value })}
               placeholder="Write your message here..."
-              className="w-full bg-[#0C0F0E] border border-[#292F2D] rounded p-2.5 text-[#E7ECE9] placeholder-[#5E6964] focus:outline-none focus:border-[#3DD68C] resize-none"
+              className="w-full bg-[#0C0F0E] border border-[#292F2D] rounded p-2.5 text-sm sm:text-xs text-[#E7ECE9] placeholder-[#5E6964] focus:outline-none focus:border-[#3DD68C] resize-none"
             />
           </div>
 
           {/* Action buttons */}
-          <div className="flex flex-wrap items-center justify-between gap-3 pt-2">
-            <div className="flex items-center gap-2">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 pt-2">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2">
               <button
                 type="submit"
-                className="flex items-center gap-2 px-4 py-2.5 rounded bg-[#3DD68C] hover:bg-[#4ADE80] text-[#0C0F0E] font-semibold text-xs transition-all shadow-md"
+                className="flex items-center justify-center gap-2 px-4 py-3 sm:py-2.5 rounded bg-[#3DD68C] hover:bg-[#4ADE80] text-[#0C0F0E] font-semibold text-xs transition-all shadow-md min-h-[42px]"
               >
                 <Send size={13} />
                 <span>Dispatch via Email Client</span>
@@ -225,7 +223,7 @@ ${formData.message || '[Your message here]'}`;
               <button
                 type="button"
                 onClick={handleCopyPayload}
-                className="flex items-center gap-1.5 px-3 py-2.5 rounded bg-[#181D1B] hover:bg-[#202724] border border-[#292F2D] text-[#929D97] hover:text-[#E7ECE9] text-xs transition-colors"
+                className="flex items-center justify-center gap-1.5 px-3 py-3 sm:py-2.5 rounded bg-[#181D1B] hover:bg-[#202724] border border-[#292F2D] text-[#929D97] hover:text-[#E7ECE9] text-xs transition-colors min-h-[42px]"
                 title="Copy formatted message to clipboard for webmail (Gmail)"
               >
                 {copiedPayload ? <Check size={12} className="text-[#3DD68C]" /> : <Copy size={12} />}
@@ -234,7 +232,7 @@ ${formData.message || '[Your message here]'}`;
             </div>
 
             {formSubmitted && (
-              <span className="text-[11px] text-[#3DD68C] flex items-center gap-1">
+              <span className="text-[11px] text-[#3DD68C] flex items-center justify-center sm:justify-start gap-1 py-1">
                 <Check size={12} />
                 <span>Client launched!</span>
               </span>
@@ -244,27 +242,26 @@ ${formData.message || '[Your message here]'}`;
       </div>
 
       {/* Instagram / Social Card */}
-      <div className="p-4 rounded-lg bg-[#0C0F0E] border border-[#292F2D] flex flex-col sm:flex-row sm:items-center justify-between gap-3 font-mono text-xs">
-        <div className="flex items-center gap-2 text-[#929D97]">
-          <Instagram size={15} className="text-[#F472B6]" />
-          <span>Follow along on Instagram:</span>
-          <span className="text-[#E7ECE9] font-medium">@{profileData.contact.instagramUser}</span>
+      <div className="p-3.5 sm:p-4 rounded-lg bg-[#0C0F0E] border border-[#292F2D] flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 sm:gap-3 font-mono text-xs">
+        <div className="flex items-center gap-2 text-[#929D97] truncate">
+          <Instagram size={15} className="text-[#929D97] flex-shrink-0" />
+          <span className="truncate">Instagram:</span>
+          <span className="text-[#E7ECE9] font-medium truncate">@{profileData.contact.instagramUser}</span>
         </div>
         <a
           href={profileData.contact.instagram}
           target="_blank"
           rel="noreferrer"
-          className="text-[#3DD68C] hover:underline flex items-center gap-1 text-[11px]"
+          className="text-[#3DD68C] hover:underline flex items-center gap-1 text-[11px] self-start sm:self-auto py-1"
         >
           <span>Open Instagram</span>
           <ExternalLink size={11} />
         </a>
       </div>
 
-      <div className="font-mono text-[11px] text-[#5E6964] text-center pt-4">
+      <div className="font-mono text-[10px] sm:text-[11px] text-[#5E6964] text-center pt-2 sm:pt-4">
         // EOF .scope-contact — Veer Pratap Contact Endpoint
       </div>
     </div>
   );
 }
-

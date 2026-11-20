@@ -6,7 +6,7 @@
 
 ---
 
-## 🚀 Concept & Design Philosophy
+## Concept & Design Philosophy
 
 Rather than a generic landing page or conventional template, **VEER.EXE** is designed as **"An AI engineer's personal development environment"** — combining the technical feel of VS Code, a minimalist operating system, and an interactive machine learning workspace.
 
@@ -16,7 +16,7 @@ Rather than a generic landing page or conventional template, **VEER.EXE** is des
 
 ---
 
-## 💻 Key Features
+## Key Features
 
 ### 1. Application Shell
 - **Top Application Bar**: System status pulse (`LIVE | AI_SYS_READY`), workspace path, command search launcher, line number toggle, and social profiles.
@@ -40,7 +40,7 @@ Instant fuzzy finder to jump across files, case studies, actions, and external l
 
 ### 4. Neural Network & Computer Vision Sandbox (`lab/neural-playground.tsx`)
 An interactive simulation demonstrating the mechanics of Veer's **CIFAR-10 Convolutional Neural Network**:
-- Interactive 10-class selector
+- Interactive 10-class selector with clean SVG icons
 - Spatial kernel filters (`Sobel-H`, `Sobel-V`, `Laplacian`, `High-Pass`)
 - Dynamic Conv2D feature map activation matrix
 - Softmax probability logit distribution bars
@@ -53,7 +53,7 @@ An interactive simulation demonstrating the mechanics of Veer's **CIFAR-10 Convo
 
 ---
 
-## ⌨️ Keyboard Shortcuts
+## Keyboard Shortcuts
 
 | Shortcut | Action |
 | :--- | :--- |
@@ -68,7 +68,7 @@ An interactive simulation demonstrating the mechanics of Veer's **CIFAR-10 Convo
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Framework**: React 18
 - **Bundler**: Vite
@@ -79,7 +79,7 @@ An interactive simulation demonstrating the mechanics of Veer's **CIFAR-10 Convo
 
 ---
 
-## 📦 Getting Started Locally
+## Getting Started Locally
 
 ```bash
 # Install dependencies
@@ -97,7 +97,7 @@ npm run preview
 
 ---
 
-## 📸 Screenshots
+## Screenshots
 
 Screenshots captured from the running application:
 - Desktop Home: [`screenshots/desktop-home.png`](./screenshots/desktop-home.png)
