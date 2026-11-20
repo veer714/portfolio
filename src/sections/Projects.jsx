@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { 
-  ArrowRight, 
-  ExternalLink, 
-  Github, 
-  FileCode, 
+import {
+  ArrowRight,
+  ExternalLink,
+  Github,
+  FileCode,
   Filter
 } from 'lucide-react';
 import { projectsData } from '../data/projects';
@@ -62,11 +62,10 @@ export function Projects({ onOpenFile }) {
           <button
             key={cat}
             onClick={() => setSelectedCategory(cat)}
-            className={`px-3 py-1.5 rounded text-[11px] transition-colors whitespace-nowrap flex-shrink-0 ${
-              selectedCategory === cat
+            className={`px-3 py-1.5 rounded text-[11px] transition-colors whitespace-nowrap flex-shrink-0 ${selectedCategory === cat
                 ? 'bg-[#3DD68C] text-[#0C0F0E] font-semibold'
                 : 'bg-[#141918] text-[#929D97] hover:text-[#E7ECE9] border border-[#292F2D]'
-            }`}
+              }`}
           >
             {cat}
           </button>
@@ -87,11 +86,10 @@ export function Projects({ onOpenFile }) {
                   <FileCode size={14} className="text-[#3DD68C] flex-shrink-0" />
                   <span className="truncate">{project.file}</span>
                 </span>
-                <span className={`text-[10px] px-2 py-0.5 rounded border flex-shrink-0 ml-2 ${
-                  project.status.includes('Live') 
-                    ? 'bg-[#3DD68C]/10 text-[#3DD68C] border-[#3DD68C]/30' 
+                <span className={`text-[10px] px-2 py-0.5 rounded border flex-shrink-0 ml-2 ${project.status.includes('Live')
+                    ? 'bg-[#3DD68C]/10 text-[#3DD68C] border-[#3DD68C]/30'
                     : 'bg-[#181D1B] text-[#929D97] border-[#292F2D]'
-                }`}>
+                  }`}>
                   {project.status}
                 </span>
               </div>
